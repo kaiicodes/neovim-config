@@ -97,4 +97,13 @@ return {
       -- wk.register(opts.defaults)
     end
   },
+  {
+    "RRethy/vim-illuminate",
+    opts = {
+       delay = 500,
+    },
+    config = function(_, opts)
+      require("illuminate").configure(opts)
+    end
+  }
 }

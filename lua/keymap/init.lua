@@ -4,6 +4,10 @@ local keymap = {
   { "n",          "<C-j>",     "<C-w>j",                                                 { desc = "Go to lower window" } },
   { "n",          "<C-k>",     "<C-w>k",                                                 { desc = "Go to upper window" } },
 
+  { "n",          "<leader>s", "<CMD> w <CR>",                                           { desc = "" } },
+  { "n",          "<leader>w", "<CMD> bd <CR>",                                          { desc = "" } },
+  { "n",          "<leader>n", "<CMD> enew <CR>",                                        { desc = "" } },
+
   { "n",          "<Esc>",     ":nohlsearch <Esc>",                                      { desc = "", silent = true } },
 
   { "n",          "<A-j>",     "<CMD>m .+1<CR>==",                                       { desc = "", silent = true } },

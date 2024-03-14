@@ -5,11 +5,15 @@ return {
     name = "catppuccin",
     priority = 1000
   },
+  {
+    "sainnhe/sonokai",
+  },
   -- Status Line
   {
     'nvim-lualine/lualine.nvim',
+    opts = {},
     config = function(_, opts)
-      require("lualine").setup()
+      require("lualine").setup(opts)
     end
   },
   -- Buffer Line
@@ -37,8 +41,8 @@ return {
     main = "ibl",
     opts = {
       indent = {
-        char = "│",
-        tab_char = "│",
+        -- char = "│",
+        -- tab_char = "│",
       },
       scope = { enabled = false },
     },

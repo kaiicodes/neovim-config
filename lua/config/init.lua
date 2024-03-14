@@ -17,12 +17,16 @@ local opts = {
   showcmd = false,
   smartcase = true,
   mouse = "a",
+  foldmethod = "indent",
+  foldlevel = 99,
   -- Indenting
   expandtab = true,   -- use spaces when <Tab> is inserted
   shiftwidth = 2,     -- number of spaces to use for (auto)indent step
   smartindent = true, -- smart autoindenting for C programs
   tabstop = 2,        -- number of spaces that <Tab> in file uses
   softtabstop = 2,    -- number of spaces that <Tab> uses while editing
+  spell = false,
+  spelllang= "en_us",
 
   signcolumn = "yes",
 }
@@ -41,6 +45,11 @@ for k, v in pairs(g) do
   vim.g[k] = v
 end
 
+local signs = { Error = " ", Info = " ", Hint = " ", Warn = " " }
+for name, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. name
+  vim.fn.sign_define(hl, { text = icon, numhl = hl, texthl = hl })
+end
 
 vim.diagnostic.config({
   virtual_text = false,

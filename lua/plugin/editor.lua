@@ -23,7 +23,9 @@ return {
         "heex",
         "javascript",
         "html",
-        "python" },
+        "python",
+        "rust"
+      },
       sync_install = false,
       highlight = { enable = true },
       indent = { enable = true },
@@ -100,7 +102,7 @@ return {
   {
     "RRethy/vim-illuminate",
     opts = {
-       delay = 500,
+      delay = 500,
     },
     config = function(_, opts)
       require("illuminate").configure(opts)

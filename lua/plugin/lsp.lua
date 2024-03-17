@@ -1,4 +1,5 @@
 return {
+
   -- LSP Management
   {
     "williamboman/mason.nvim",
@@ -14,6 +15,7 @@ return {
       require("mason-lspconfig").setup()
     end
   },
+
   -- LSP Config
   {
     "neovim/nvim-lspconfig",
@@ -22,6 +24,7 @@ return {
       local path = io.popen("pwd"):read()
       local lspconfig = require('lspconfig')
       lspconfig.lua_ls.setup {}
+      lspconfig.rust_analyzer.setup {}
       lspconfig.pyright.setup {
         settings = {
           python = {
@@ -31,6 +34,7 @@ return {
       }
     end
   },
+
   -- Linter
   {
     "jose-elias-alvarez/null-ls.nvim",
@@ -58,6 +62,8 @@ return {
       })
     end
   },
+
+  -- Diagnostics
   {
     "folke/trouble.nvim",
     opts = {},
@@ -65,5 +71,4 @@ return {
       require('trouble').setup()
     end
   }
-
 }

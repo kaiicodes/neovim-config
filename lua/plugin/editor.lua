@@ -1,4 +1,5 @@
 return {
+
   -- File Explorer
   {
     "nvim-tree/nvim-tree.lua",
@@ -14,17 +15,25 @@ return {
     build = ":TSUpdate",
     opts = {
       ensure_installed = {
+        -- Languages
         "c",
+        "elixir",
+        "javascript",
         "lua",
+        "python",
+        "rust",
+        "sql",
+        -- Formats
+        "css",
+        "csv",
+        "html",
+        "json",
+        "markdown",
+        "markdown_inline",
+        -- Vim
+        "query",
         "vim",
         "vimdoc",
-        "query",
-        "elixir",
-        "heex",
-        "javascript",
-        "html",
-        "python",
-        "rust"
       },
       sync_install = false,
       highlight = { enable = true },

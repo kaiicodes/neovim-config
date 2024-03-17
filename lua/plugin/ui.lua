@@ -1,4 +1,5 @@
 return {
+
   -- Colortheme
   {
     "catppuccin/nvim",
@@ -8,14 +9,25 @@ return {
   {
     "sainnhe/sonokai",
   },
+
   -- Status Line
   {
     'nvim-lualine/lualine.nvim',
-    opts = {},
+    opts = {
+      sections = {
+        lualine_c = {
+          {
+            'filename',
+            path = 1 -- 0 = just filename, 1 = relative path, 2 = absolute path
+          }
+        }
+      }
+    },
     config = function(_, opts)
       require("lualine").setup(opts)
     end
   },
+
   -- Buffer Line
   {
     'akinsho/bufferline.nvim',
@@ -35,6 +47,7 @@ return {
       require("bufferline").setup(opts)
     end
   },
+
   -- Indentation Guide
   {
     "lukas-reineke/indent-blankline.nvim",
@@ -50,6 +63,7 @@ return {
       require("ibl").setup(opts)
     end
   },
+
   -- Icons
   {
     'nvim-tree/nvim-web-devicons',
@@ -57,12 +71,22 @@ return {
       require("nvim-web-devicons").setup()
     end
   },
+
   -- Menu Overhaul
   {
     "MunifTanjim/nui.nvim",
   },
   {
     'rcarriga/nvim-notify',
+    opts = {
+      minimum_width = 0,
+      fps = 60,
+      stages = "fade",
+      timeout = 3000,
+    },
+    config = function(_, opts)
+      vim.notify = require("notify").setup(opts)
+    end
   },
   {
     "folke/noice.nvim",

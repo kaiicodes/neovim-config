@@ -48,7 +48,10 @@ return {
               'import sys; import os;' ..
               'version=".".join(map(str, sys.version_info[:2]));' ..
               'sys.path.append(f"{os.getcwd()}/.venv/lib/python{version}/site-packages")'
-          return { "--init-hook", venv_path }
+          return {
+            "--init-hook", venv_path,
+            "--disable", "C0114, C0115, C0116"
+          }
         end,
       },
     },

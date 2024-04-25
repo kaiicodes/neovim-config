@@ -4,6 +4,11 @@ local keymap = {
   { "n", "<C-j>",     "<C-w>j",                                   { desc = "Go to lower window" } },
   { "n", "<C-k>",     "<C-w>k",                                   { desc = "Go to upper window" } },
 
+  { "n", "<C-=>",     "<CMD>horizontal resize +1<CR>",            { desc = "" } },
+  { "n", "<C-->",     "<CMD>horizontal resize -1<CR>",            { desc = "" } },
+  { "n", "<C-,>",     "<CMD>vertical resize +1<CR>",              { desc = "" } },
+  { "n", "<C-.>",     "<CMD>vertical resize -1<CR>",              { desc = "" } },
+
   { "n", "<leader>s", "<CMD> w <CR>",                             { desc = "" } },
   { "n", "<leader>w", "<CMD> bp | bd# <CR>",                      { desc = "" } },
   { "n", "<leader>n", "<CMD> enew <CR>",                          { desc = "" } },

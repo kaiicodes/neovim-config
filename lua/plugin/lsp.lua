@@ -21,9 +21,12 @@ return {
     "neovim/nvim-lspconfig",
     opts = {},
     config = function(_, opts)
+      local capabilities = require('cmp_nvim_lsp').default_capabilities()
       local path = io.popen("pwd"):read()
       local lspconfig = require('lspconfig')
-      lspconfig.lua_ls.setup {}
+      lspconfig.lua_ls.setup {
+        capabilities = capabilities,
+      }
       lspconfig.rust_analyzer.setup {}
       lspconfig.pyright.setup {
         settings = {
@@ -31,6 +34,7 @@ return {
             pythonPath = path .. "/.venv/bin/python",
           },
         },
+        capabilities = capabilities,
       }
     end
   },

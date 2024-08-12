@@ -15,7 +15,8 @@ vim.opt.rtp:prepend(lazypath)
 local plugin = {
   require "plugin.ui",
   require "plugin.editor",
-  require "plugin.lsp"
+  require "plugin.lsp",
+  require "plugin.cmp"
 }
 
 

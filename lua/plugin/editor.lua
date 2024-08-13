@@ -23,6 +23,7 @@ return {
         "python",
         "rust",
         "sql",
+        "vue",
         -- Formats
         "css",
         "csv",

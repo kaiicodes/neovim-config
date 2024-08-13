@@ -1,18 +1,13 @@
 return {
 
   -- Sources
-  {
-    "hrsh7th/cmp-buffer",
-  },
-  {
-    "hrsh7th/cmp-nvim-lsp",
-  },
-  {
-    "hrsh7th/cmp-path",
-  },
-  {
-    "hrsh7th/cmp-cmdline",
-  },
+  { "hrsh7th/cmp-buffer", },
+  { "hrsh7th/cmp-nvim-lsp" },
+  { "hrsh7th/cmp-path" },
+  { "hrsh7th/cmp-cmdline" },
+
+  -- Style
+  { "onsails/lspkind.nvim" },
 
   -- Completion
   {
@@ -20,6 +15,7 @@ return {
     opts = {},
     config = function(_, opts)
       local cmp = require("cmp")
+      local lspkind = require('lspkind')
       cmp.setup({
         sources = {
           -- { name = 'buffer' },
@@ -32,6 +28,17 @@ return {
         },
         view = {
           entries = { name = 'custom', selection_order = 'near_cursor' }
+        },
+        formatting = {
+          format = lspkind.cmp_format({
+            mode = "text",
+            show_labelDetails = true,
+            menu = ({
+              buffer = "[BUF] ",
+              nvim_lsp = "[LSP] ",
+              path = "[PAT] "
+            })
+          }),
         },
       })
       cmp.setup.cmdline({ '/', '?' }, {

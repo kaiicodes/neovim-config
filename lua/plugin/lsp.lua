@@ -27,7 +27,6 @@ return {
       lspconfig.lua_ls.setup {
         capabilities = capabilities,
       }
-      lspconfig.rust_analyzer.setup {}
       lspconfig.pyright.setup {
         settings = {
           python = {
@@ -36,37 +35,6 @@ return {
         },
         capabilities = capabilities,
       }
-    end
-  },
-
-  -- Linter
-  {
-    "jose-elias-alvarez/null-ls.nvim",
-    opts = {
-      pylint = {
-        diagnostics_postprocess = function(diagnostic)
-          diagnostic.code = string.format("%s %s", diagnostic.message_id, diagnostic.code)
-        end,
-        extra_args = function()
-          local venv_path =
-              'import sys; import os;' ..
-              'version=".".join(map(str, sys.version_info[:2]));' ..
-              'sys.path.append(f"{os.getcwd()}/.venv/lib/python{version}/site-packages")'
-          return {
-            "--init-hook", venv_path,
-            "--disable", "C0114, C0115, C0116"
-          }
-        end,
-      },
-    },
-    config = function(_, opts)
-      local null_ls = require("null-ls")
-      null_ls.setup({
-        sources = {
-          null_ls.builtins.diagnostics.pylint.with(opts.pylint),
-          null_ls.builtins.formatting.black,
-        },
-      })
     end
   },
 

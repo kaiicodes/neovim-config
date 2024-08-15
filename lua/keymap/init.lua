@@ -2,55 +2,58 @@ local keymap = {
 
   -- [[ General ]] --
 
-  { "n", "<leader>s", "<CMD> w <CR>",                    { desc = "Save file" } },
-  { "n", "<leader>w", "<CMD> bp | bd# <CR>",             { desc = "Close file" } },
-  { "n", "<leader>n", "<CMD> enew <CR>",                 { desc = "New file" } },
-  { "n", "<leader>q", "<CMD> q <CR>",                    { desc = "Close window" } },
-  { "n", "<leader>Q", "<CMD> qa <CR>",                   { desc = "Exit Nvim" } },
+  { "n", "<leader>s", "<CMD> w <CR>",                                              { desc = "Save file" } },
+  { "n", "<leader>w", "<CMD> bp | bd# <CR>",                                       { desc = "Close file" } },
+  { "n", "<leader>n", "<CMD> enew <CR>",                                           { desc = "New file" } },
+  { "n", "<leader>q", "<CMD> q <CR>",                                              { desc = "Close window" } },
+  { "n", "<leader>Q", "<CMD> qa <CR>",                                             { desc = "Exit Nvim" } },
 
-  { "n", "<A-k>",     "<CMD>m .-2<CR>==",                { desc = "Move line up", silent = true } },
-  { "n", "<A-j>",     "<CMD>m .+1<CR>==",                { desc = "Move line down", silent = true } },
+  { "n", "<A-k>",     "<CMD>m .-2<CR>==",                                          { desc = "Move line up", silent = true } },
+  { "n", "<A-j>",     "<CMD>m .+1<CR>==",                                          { desc = "Move line down", silent = true } },
 
-  { "v", "<A-k>",     ":m '<-2<CR>gv=gv",                { desc = "Move block up", silent = true } },
-  { "v", "<A-j>",     ":m '>+1<CR>gv=gv",                { desc = "Move block down", silent = true } },
+  { "v", "<A-k>",     ":m '<-2<CR>gv=gv",                                          { desc = "Move block up", silent = true } },
+  { "v", "<A-j>",     ":m '>+1<CR>gv=gv",                                          { desc = "Move block down", silent = true } },
 
-  { "n", '<A-1>',     '<CMD>BufferLineGoToBuffer 1<CR>', { desc = "Go to buffer 1" } },
-  { "n", '<A-2>',     '<CMD>BufferLineGoToBuffer 2<CR>', { desc = "Go to buffer 2" } },
-  { "n", '<A-3>',     '<CMD>BufferLineGoToBuffer 3<CR>', { desc = "Go to buffer 3" } },
-  { "n", '<A-4>',     '<CMD>BufferLineGoToBuffer 4<CR>', { desc = "Go to buffer 4" } },
-  { "n", '<A-5>',     '<CMD>BufferLineGoToBuffer 5<CR>', { desc = "Go to buffer 5" } },
-  { "n", '<A-6>',     '<CMD>BufferLineGoToBuffer 6<CR>', { desc = "Go to buffer 6" } },
-  { "n", '<A-7>',     '<CMD>BufferLineGoToBuffer 7<CR>', { desc = "Go to buffer 7" } },
-  { "n", '<A-8>',     '<CMD>BufferLineGoToBuffer 8<CR>', { desc = "Go to buffer 8" } },
-  { "n", '<A-9>',     '<CMD>BufferLineGoToBuffer 9<CR>', { desc = "Go to buffer 9" } },
+  { "n", '<A-1>',     '<CMD>BufferLineGoToBuffer 1<CR>',                           { desc = "Go to buffer 1" } },
+  { "n", '<A-2>',     '<CMD>BufferLineGoToBuffer 2<CR>',                           { desc = "Go to buffer 2" } },
+  { "n", '<A-3>',     '<CMD>BufferLineGoToBuffer 3<CR>',                           { desc = "Go to buffer 3" } },
+  { "n", '<A-4>',     '<CMD>BufferLineGoToBuffer 4<CR>',                           { desc = "Go to buffer 4" } },
+  { "n", '<A-5>',     '<CMD>BufferLineGoToBuffer 5<CR>',                           { desc = "Go to buffer 5" } },
+  { "n", '<A-6>',     '<CMD>BufferLineGoToBuffer 6<CR>',                           { desc = "Go to buffer 6" } },
+  { "n", '<A-7>',     '<CMD>BufferLineGoToBuffer 7<CR>',                           { desc = "Go to buffer 7" } },
+  { "n", '<A-8>',     '<CMD>BufferLineGoToBuffer 8<CR>',                           { desc = "Go to buffer 8" } },
+  { "n", '<A-9>',     '<CMD>BufferLineGoToBuffer 9<CR>',                           { desc = "Go to buffer 9" } },
 
-  { "n", "<Esc>",     ":nohlsearch <Esc>",               { desc = "", silent = true } },
-  { "t", "<Esc>",     "<C-\\><C-n>",                     { desc = "", silent = true } },
+  { "n", "<Esc>",     ":nohlsearch <Esc>",                                         { desc = "", silent = true } },
+  { "t", "<Esc>",     "<C-\\><C-n>",                                               { desc = "", silent = true } },
 
   -- [[ Windows ]] --
 
-  { "n", "<C-h>",     "<C-w>h",                          { desc = "Go to left window" } },
-  { "n", "<C-l>",     "<C-w>l",                          { desc = "Go to right window" } },
-  { "n", "<C-j>",     "<C-w>j",                          { desc = "Go to lower window" } },
-  { "n", "<C-k>",     "<C-w>k",                          { desc = "Go to upper window" } },
+  { "n", "<C-h>",     "<C-w>h",                                                    { desc = "Go to left window" } },
+  { "n", "<C-l>",     "<C-w>l",                                                    { desc = "Go to right window" } },
+  { "n", "<C-j>",     "<C-w>j",                                                    { desc = "Go to lower window" } },
+  { "n", "<C-k>",     "<C-w>k",                                                    { desc = "Go to upper window" } },
 
-  { "n", "<C-=>",     "<CMD>horizontal resize +1<CR>",   { desc = "Increase window height" } },
-  { "n", "<C-->",     "<CMD>horizontal resize -1<CR>",   { desc = "Decrease window height" } },
-  { "n", "<C-,>",     "<CMD>vertical resize +1<CR>",     { desc = "Incrase window width" } },
-  { "n", "<C-.>",     "<CMD>vertical resize -1<CR>",     { desc = "Decrease window width" } },
+  { "n", "<C-=>",     "<CMD>horizontal resize +1<CR>",                             { desc = "Increase window height" } },
+  { "n", "<C-->",     "<CMD>horizontal resize -1<CR>",                             { desc = "Decrease window height" } },
+  { "n", "<C-,>",     "<CMD>vertical resize +1<CR>",                               { desc = "Incrase window width" } },
+  { "n", "<C-.>",     "<CMD>vertical resize -1<CR>",                               { desc = "Decrease window width" } },
 
   -- [[ Utils ]] --
 
   -- Nvim Tree
-  { "n", "<C-e>",     "<CMD> NvimTreeFocus <CR>",        { desc = "Nvim Tree Focus" } },
-  { "n", "<C-b>",     "<CMD> NvimTreeToggle <CR>",       { desc = "Nvim Tree Toggle" } },
+  { "n", "<C-e>",     "<CMD> NvimTreeFocus <CR>",                                  { desc = "Nvim Tree Focus" } },
+  { "n", "<C-b>",     "<CMD> NvimTreeToggle <CR>",                                 { desc = "Nvim Tree Toggle" } },
 
   -- Terminal
-  { "n", "<S-t>",     "<CMD> ToggleTerm <CR>",           { desc = "Toggle Terminal" } },
-  { "n", "<S-D-t>",   "<CMD> ToggleTermToggleAll <CR>",  { desc = "" } },
+  { "n", "<S-t>",     "<CMD> ToggleTerm <CR>",                                     { desc = "Toggle Terminal" } },
+  { "n", "<S-D-t>",   "<CMD> ToggleTermToggleAll <CR>",                            { desc = "" } },
 
   -- Which Key
-  { "n", "<S-w>",     "<CMD> WhichKey <CR>",             { desc = "Which Key" } },
+  { "n", "<S-w>",     "<CMD> WhichKey <CR>",                                       { desc = "Which Key" } },
+
+  -- Conform
+  { "n", "<leader>F", "<CMD>lua require('conform').format({ async = true }) <CR>", { desc = "[CFM] Format" } },
 
   -- [[ Vim LSP ]] --
 
@@ -61,7 +64,7 @@ local keymap = {
   { "n",          "<leader>H",  "<CMD>lua vim.lsp.buf.signature_help() <CR>",        { desc = "[LSP] Help" } },
   { "n",          "<leader>R",  "<CMD>lua vim.lsp.buf.rename() <CR>",                { desc = "[LSP] Rename" } },
   { { "n", "v" }, "<leader>a",  "<CMD>lua vim.lsp.buf.code_action() <CR>",           { desc = "[LSP] Code action" } },
-  { "n",          "<leader>F",  "<CMD>lua vim.lsp.buf.format({ async = true })<CR>", { desc = "[LSP] Format" } },
+  -- { "n",          "<leader>F",  "<CMD>lua vim.lsp.buf.format({ async = true })<CR>", { desc = "[LSP] Format" } },
   -- { "n",          "gD", "<CMD>lua vim.lsp.buf.declaration() <CR>",           { desc = "[LSP] Declaration" } },
   -- { "n",          "gi", "<CMD>lua vim.lsp.buf.implementation() <CR>",        { desc = "[LSP] Implementations" } },
   -- { "n",          "gt", "<CMD>lua vim.lsp.buf.type_definition() <CR>",       { desc = "[LSP] Type definition" } },

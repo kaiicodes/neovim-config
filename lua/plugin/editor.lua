@@ -14,28 +14,8 @@ return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     opts = {
-      ensure_installed = {
-        -- Languages
-        "c",
-        "elixir",
-        "javascript",
-        "lua",
-        "python",
-        "rust",
-        "sql",
-        "vue",
-        -- Formats
-        "css",
-        "csv",
-        "html",
-        "json",
-        "markdown",
-        "markdown_inline",
-        -- Vim
-        "query",
-        "vim",
-        "vimdoc",
-      },
+      ensure_installed = "all",
+      ignore_install = { "norg" },
       sync_install = false,
       highlight = { enable = true },
       indent = { enable = true },
@@ -63,9 +43,9 @@ return {
   -- Git
   {
     "lewis6991/gitsigns.nvim",
-    opts = {},
+    opts = { current_line_blame = true },
     config = function(_, opts)
-      require('gitsigns').setup()
+      require('gitsigns').setup(opts)
     end
   },
 

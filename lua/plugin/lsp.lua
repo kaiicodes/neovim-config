@@ -21,20 +21,16 @@ return {
     "neovim/nvim-lspconfig",
     opts = {},
     config = function(_, opts)
-      local capabilities = require('cmp_nvim_lsp').default_capabilities()
-      local path = io.popen("pwd"):read()
-      local lspconfig = require('lspconfig')
-      lspconfig.lua_ls.setup {
-        capabilities = capabilities,
-      }
-      lspconfig.pyright.setup {
-        settings = {
-          python = {
-            pythonPath = path .. "/.venv/bin/python",
-          },
-        },
-        capabilities = capabilities,
-      }
+      -- vim.lsp.config('pyright', {
+      --   settings = {
+      --     python = {
+      --       pythonPath = io.popen("pwd"):read() .. "/.venv/bin/python",
+      --     },
+      --   },
+      -- })
+      vim.lsp.enable('pyright')
+      vim.lsp.enable('lua_ls')
+      vim.lsp.enable('ts_ls')
     end
   },
 

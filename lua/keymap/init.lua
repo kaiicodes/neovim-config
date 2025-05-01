@@ -23,6 +23,8 @@ local keymap = {
   { "n", '<A-7>',     '<CMD>BufferLineGoToBuffer 7<CR>',                           { desc = "Go to buffer 7" } },
   { "n", '<A-8>',     '<CMD>BufferLineGoToBuffer 8<CR>',                           { desc = "Go to buffer 8" } },
   { "n", '<A-9>',     '<CMD>BufferLineGoToBuffer 9<CR>',                           { desc = "Go to buffer 9" } },
+  { "n", '<A-h>',     '<CMD>BufferLineCyclePrev<CR>',                              { desc = "Cycle buffer left" } },
+  { "n", '<A-l>',     '<CMD>BufferLineCycleNext<CR>',                              { desc = "Cycle buffer right" } },
 
   { "n", "<Esc>",     ":nohlsearch <Esc>",                                         { desc = "", silent = true } },
   { "t", "<Esc>",     "<C-\\><C-n>",                                               { desc = "", silent = true } },
@@ -94,6 +96,8 @@ local keymap = {
 
   -- Git
   { "n",          "<leader>gs", "<CMD> Telescope git_status<CR>",                    { desc = "[TELE] Git status" } },
+  { "n",          "<leader>gb", "<CMD> Gitsigns blame<CR>",                          { desc = "[GIT] Git blame" } },
+  { "n",          "<leader>gd", "<CMD> Gitsigns diffthis<CR>",                       { desc = "[GIT] Git diff" } },
 }
 
 for _, map in ipairs(keymap) do

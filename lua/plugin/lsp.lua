@@ -21,13 +21,6 @@ return {
     "neovim/nvim-lspconfig",
     opts = {},
     config = function(_, opts)
-      -- vim.lsp.config('pyright', {
-      --   settings = {
-      --     python = {
-      --       pythonPath = io.popen("pwd"):read() .. "/.venv/bin/python",
-      --     },
-      --   },
-      -- })
       vim.lsp.enable('pyright')
       vim.lsp.enable('lua_ls')
       vim.lsp.enable('ts_ls')

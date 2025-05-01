@@ -97,5 +97,79 @@ return {
     config = function(_, opts)
       require("illuminate").configure(opts)
     end
+  },
+
+  -- Markdown Viewer
+  {
+    "OXY2DEV/markview.nvim",
+    lazy = false, -- Recommended
+    -- ft = "markdown" -- If you decide to lazy-load anyway
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-tree/nvim-web-devicons"
+    },
+    opts = {
+      markdown = {
+        horizontal_rules = {
+          parts = {
+            {
+              type = "repeating",
+              repeat_amount = function(buffer)
+                local textoff = vim.fn.getwininfo(vim.api.nvim_get_current_win())[1].textoff;
+                return math.floor(vim.o.columns - textoff - 3);
+              end,
+              text = "",
+              hl = {
+                "MarkviewBlockQuoteDefault",
+              },
+            },
+          }
+        },
+        headings = {
+          shift_width = 0,
+          heading_2 = {
+            sign = "󰌕",
+          },
+          heading_3 = {
+            sign = "󰌕",
+            sign_hl = "MarkviewHeading3Sign",
+          },
+        },
+        list_items = {
+          marker_minus = {
+            add_padding = false,
+            text = "",
+            hl = "MarkviewListItemMinus"
+          },
+          marker_plus = {
+            add_padding = false,
+            text = "",
+            hl = "MarkviewListItemPlus"
+          },
+          marker_star = {
+            add_padding = false,
+            text = "",
+            hl = "MarkviewListItemStar"
+          },
+          marker_dot = {
+            add_padding = false,
+          },
+          marker_parenthesis = {
+            add_padding = false,
+          }
+        },
+      },
+      checkboxes = {
+        checked = {
+          text = "",
+        },
+        unchecked = {
+          text = "",
+        },
+      },
+    },
+    config = function(_, opts)
+      require("markview").setup(opts)
+    end
   }
 }
